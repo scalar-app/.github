@@ -31,4 +31,4 @@ jobs:
             .github ISSUE_TEMPLATE FUNDING.yml
 
       - name: actionlint
-        uses: rhysd/actionlint@v1
+        uses: raven-actions/actionlint@v2
