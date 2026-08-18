@@ -1,0 +1,86 @@
+name: Integration request
+description: Ask for a new provider connector (email, calendar, school system, task tool, file storage).
+title: "integration: "
+labels: ["type:feature", "area:integrations"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Integrations live in the [integrations](https://github.com/scalar-app/integrations) repository. One request per provider.
+  - type: input
+    id: provider
+    attributes:
+      label: Provider name
+      placeholder: "Canvas LMS, Fastmail, Todoist, ..."
+    validations:
+      required: true
+  - type: input
+    id: docs
+    attributes:
+      label: Provider API documentation URL
+      placeholder: "https://"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Email
+        - Calendar
+        - School / LMS
+        - Tasks / projects
+        - Files / notes
+        - Messaging
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: auth
+    attributes:
+      label: Authentication model
+      description: How does the provider authenticate third-party apps?
+      options:
+        - OAuth 2.0
+        - API key or personal access token
+        - Username and password only
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: What data should Scalar read or write?
+      description: List objects (messages, events, assignments, tasks) and whether each is read-only or read-write.
+      placeholder: |
+        - Assignments with due dates: read
+        - Announcements: read
+        - Submissions: write (later)
+    validations:
+      required: true
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Phase relevance
+      description: Where does this fit in the roadmap? Stage 1 is native tasks and events; connectors arrive after that.
+      options:
+        - Blocks my adoption today
+        - Important for the next phase
+        - Nice to have eventually
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Rate limits, quirks, sandbox access
+      description: Anything a maintainer should know before starting (test accounts, developer program approval, webhooks vs polling).
+  - type: dropdown
+    id: contribute
+    attributes:
+      label: Willing to contribute?
+      options:
+        - "Yes, I can build the connector"
+        - "Yes, I can test with a real account"
+        - "No"
+    validations:
+      required: true

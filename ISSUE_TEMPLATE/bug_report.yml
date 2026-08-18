@@ -1,0 +1,97 @@
+name: Bug report
+description: Something is broken or behaves differently from what is documented.
+title: "bug: "
+labels: ["type:bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Search existing issues first. For security problems do not open an issue, follow [SECURITY.md](https://github.com/scalar-app/.github/blob/main/SECURITY.md).
+  - type: dropdown
+    id: repository
+    attributes:
+      label: Repository
+      description: Which repository does this bug belong to? If this is filed on the wrong repo we will move it.
+      options:
+        - web
+        - mobile
+        - desktop
+        - api
+        - worker
+        - integrations
+        - ai
+        - sdk
+        - ui
+        - website
+        - docs
+        - infra
+        - .github
+        - not sure
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: Package version, app build number, or the commit SHA you are running.
+      placeholder: "0.3.1 or a1b2c3d"
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      multiple: true
+      options:
+        - Web (Chrome)
+        - Web (Firefox)
+        - Web (Safari)
+        - Web (other)
+        - macOS
+        - Windows
+        - Linux
+        - iOS
+        - Android
+        - Server / self-hosted
+        - CI
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Minimal, numbered steps. Include a small repo, snippet or fixture if that helps.
+      placeholder: |
+        1. Open the Today view
+        2. Create a task with a due date in the past
+        3. Reload
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead. Include the exact error message if there is one.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs, stack traces, screenshots
+      description: Paste logs as text where possible. Redact tokens, emails and anything private.
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and discussions.
+          required: true
+        - label: This is not a security vulnerability (those go through SECURITY.md).
+          required: true

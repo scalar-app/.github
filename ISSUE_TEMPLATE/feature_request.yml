@@ -1,0 +1,63 @@
+name: Feature request
+description: Propose a change or addition.
+title: "feat: "
+labels: ["type:feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Not sure yet whether this is a feature request or an open question? Start a [Discussion](https://github.com/orgs/scalar-app/discussions) instead; it can become an issue later.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - area:web
+        - area:mobile
+        - area:desktop
+        - area:api
+        - area:worker
+        - area:integrations
+        - area:ai
+        - area:sdk
+        - area:ui
+        - area:website
+        - area:docs
+        - area:infra
+        - cross-cutting
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to do, and what gets in the way today? Describe the situation, not the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should change. Be concrete about behavior, UI, API shape or data where relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches you thought about and why they are worse, or workarounds you use now.
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Links, mockups, related issues, prior art in other tools.
+  - type: dropdown
+    id: contribute
+    attributes:
+      label: Willing to implement?
+      options:
+        - "Yes, I can open a PR"
+        - "Yes, with guidance"
+        - "No"
+    validations:
+      required: true
