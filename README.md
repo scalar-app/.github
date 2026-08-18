@@ -11,7 +11,7 @@ Scalar is split into one repository per concern (`web`, `api`, `sdk`, `ui`, ...)
 | You want to change | Edit |
 | --- | --- |
 | The org profile page on github.com/scalar-app | `profile/README.md` |
-| The org logo shown on the profile | Drop `scalar.png` into `profile/assets/` (see below) |
+| The org logo shown on the profile | Replace `profile/assets/scalar.png` |
 | Issue forms offered in every repo | `ISSUE_TEMPLATE/*.yml` |
 | Links shown on the "New issue" chooser, blank issues on or off | `ISSUE_TEMPLATE/config.yml` |
 | Default pull request body | `PULL_REQUEST_TEMPLATE.md` |
@@ -29,7 +29,7 @@ A repo that has its own `SECURITY.md`, `CONTRIBUTING.md` or issue templates over
 
 ## Logo
 
-`profile/README.md` references `profile/assets/scalar.png`. That file is not committed yet; `profile/assets/.gitkeep` holds the directory. Add the real logo (PNG, transparent background, roughly 512x512, the Scalar mark in `#FFD600` on dark) at that path. Until then the profile shows a broken image.
+`profile/README.md` shows `profile/assets/scalar.png`: the Scalar mark in `#FFD600` on dark, 512x512. The full resolution source lives in the `website` repository (`public/scalar.png`); regenerate this file from it when the logo changes.
 
 ## Reusable CI
 
@@ -58,7 +58,7 @@ Reusable workflows must live under `.github/workflows/` inside the repository, w
 
 ```
 profile/README.md              org profile
-profile/assets/                logo (scalar.png, not yet added)
+profile/assets/                logo (scalar.png)
 ISSUE_TEMPLATE/                issue forms and chooser config
 PULL_REQUEST_TEMPLATE.md
 CONTRIBUTING.md
