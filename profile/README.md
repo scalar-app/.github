@@ -15,8 +15,7 @@ There is no hosted Scalar and none is planned. You run it, on your own machine o
 | Repository | Purpose |
 | --- | --- |
 | [web](https://github.com/scalar-app/web) | Web application (browser client). |
-| [mobile](https://github.com/scalar-app/mobile) | iOS and Android apps. |
-| [desktop](https://github.com/scalar-app/desktop) | macOS, Windows and Linux desktop app. |
+| [desktop](https://github.com/scalar-app/desktop) | Native shell for macOS, Windows, Linux, iOS and Android. |
 | [api](https://github.com/scalar-app/api) | HTTP API, auth, workspaces, tasks, events, today view, Command. |
 | [worker](https://github.com/scalar-app/worker) | Background jobs: sync, scheduling, notifications. |
 | [integrations](https://github.com/scalar-app/integrations) | Provider connectors (email, calendar, Canvas, files). |
