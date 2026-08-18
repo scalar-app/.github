@@ -1,0 +1,76 @@
+name: Reusable Node CI
+
+# Called from other scalar-app repos:
+#
+#   jobs:
+#     ci:
+#       uses: scalar-app/.github/.github/workflows/reusable-node-ci.yml@main
+#       with:
+#         node-version: '24'
+#
+# Runs install, lint, typecheck, test and build with pnpm. Every package is
+# expected to define those scripts (see CONTRIBUTING.md).
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: Node.js version passed to actions/setup-node
+        type: string
+        default: '24'
+      pnpm-version:
+        description: pnpm version passed to pnpm/action-setup
+        type: string
+        default: '11.17.0'
+      working-directory:
+        description: Directory containing package.json and pnpm-lock.yaml
+        type: string
+        default: '.'
+      run-build:
+        description: Set to false for packages without a build step
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    name: lint, typecheck, test, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ inputs.pnpm-version }}
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: pnpm
+          cache-dependency-path: ${{ inputs.working-directory }}/pnpm-lock.yaml
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Test
+        run: pnpm test
+
+      - name: Build
+        if: ${{ inputs.run-build }}
+        run: pnpm build
