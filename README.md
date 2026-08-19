@@ -32,7 +32,7 @@ A repo that has its own `SECURITY.md`, `CONTRIBUTING.md` or issue templates over
 
 ## Logo
 
-`profile/README.md` shows `profile/assets/scalar.png`: the Scalar mark in `#FFD600` on dark, 512x512. The full resolution source lives in the `website` repository (`public/scalar.png`); regenerate this file from it when the logo changes.
+`profile/README.md` shows `profile/assets/scalar.png`: the Scalar mark in `#FFD600` on a transparent background, 512x512. The full resolution source lives in the `website` repository (`public/scalar.png`); regenerate this file from it when the logo changes.
 
 ## Reusable workflows
 
