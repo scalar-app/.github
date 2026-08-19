@@ -19,7 +19,7 @@ and everything else demanding your attention.
 [Website](https://scalar-app.github.io/) &nbsp;·&nbsp;
 [Docs](https://github.com/scalar-app/docs) &nbsp;·&nbsp;
 [Discussions](https://github.com/orgs/scalar-app/discussions) &nbsp;·&nbsp;
-[Roadmap](https://github.com/orgs/scalar-app/projects) &nbsp;·&nbsp;
+[Roadmap](https://github.com/scalar-app/docs/blob/main/roadmap.md) &nbsp;·&nbsp;
 [Contributing](https://github.com/scalar-app/.github/blob/main/CONTRIBUTING.md) &nbsp;·&nbsp;
 [Security](https://github.com/scalar-app/.github/blob/main/SECURITY.md)
 
@@ -122,6 +122,7 @@ Every repo takes issues and pull requests.
 | Fix or build something | [Contributing guide](https://github.com/scalar-app/.github/blob/main/CONTRIBUTING.md) |
 | Find a first task | Issues labeled [`good first issue`](https://github.com/search?q=org%3Ascalar-app+label%3A%22good+first+issue%22+state%3Aopen&type=issues) |
 | Ask where a change belongs | [Discussions](https://github.com/orgs/scalar-app/discussions) |
+| Understand who decides what | [Governance](https://github.com/scalar-app/.github/blob/main/GOVERNANCE.md) |
 | Report a vulnerability | [Security policy](https://github.com/scalar-app/.github/blob/main/SECURITY.md), never a public issue |
 
 <div align="center">

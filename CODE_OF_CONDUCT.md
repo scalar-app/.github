@@ -59,11 +59,16 @@ representative at an online or offline event.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at
-`conduct@<domain>` (placeholder: the maintainers must replace this with a real,
-monitored address before the organization goes public; until then, report
-privately to any listed maintainer of the [scalar-app](https://github.com/scalar-app) organization).
-All complaints will be reviewed and investigated promptly and fairly.
+reported privately to the maintainer, [@martin-k-m](https://github.com/martin-k-m),
+through GitHub. There is no separate address, because there is no organisation
+behind this beyond one person and no budget for a monitored mailbox; saying so is
+more useful than publishing an address nobody reads.
+
+Reports are read by that one person, which is worth knowing before you send one.
+If your report is about that person, GitHub's own
+[abuse reporting](https://github.com/contact/report-abuse) is the route that does
+not go through them. All complaints will be reviewed and investigated promptly
+and fairly.
 
 All community leaders are obligated to respect the privacy and security of the
 reporter of any incident.

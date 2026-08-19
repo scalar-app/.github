@@ -1,14 +1,19 @@
 # Default owners for everything in this repository.
 # Organization-wide policy, templates and shared workflows change rarely and
 # affect every repo, so all changes here need maintainer review.
+#
+# A username rather than a team, because there is one maintainer and no team
+# exists. GitHub silently ignores an owner it cannot resolve, so naming a team
+# that does not exist means no review is requested at all. Switch these to a
+# team on the day that team exists and has more than one person in it.
 
-*                               @scalar-app/maintainers
+*                               @martin-k-m
 
 # Shared CI is called by every other repo. A broken change here breaks all of
 # them at once.
-/.github/workflows/             @scalar-app/maintainers
+/.github/workflows/             @martin-k-m
 
 # Policy documents.
-/SECURITY.md                    @scalar-app/maintainers
-/CODE_OF_CONDUCT.md             @scalar-app/maintainers
-/LICENSE                        @scalar-app/maintainers
+/SECURITY.md                    @martin-k-m
+/CODE_OF_CONDUCT.md             @martin-k-m
+/LICENSE                        @martin-k-m

@@ -20,6 +20,9 @@ Scalar is split into one repository per concern (`web`, `api`, `sdk`, `ui`, ...)
 | Release note categories | `.github/release.yml` |
 | Review requirements for this repo | `CODEOWNERS` |
 | Code of conduct | `CODE_OF_CONDUCT.md` |
+| How decisions get made | `GOVERNANCE.md` |
+| What maintaining involves | `MAINTAINERS.md` |
+| How a release happens | `RELEASING.md` |
 | Vulnerability reporting policy | `SECURITY.md` |
 | Where users get help | `SUPPORT.md` |
 | Sponsor button | `FUNDING.yml` |
