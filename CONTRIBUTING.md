@@ -82,7 +82,7 @@ Small documentation fixes can skip step 1.
 
 ## Labels
 
-Every repo uses the same label set.
+Every repo uses the same label set, defined in [`.github/labels.yml`](https://github.com/scalar-app/.github/blob/main/.github/labels.yml) and applied by the shared label sync workflow. Edit that file rather than creating labels in the GitHub UI.
 
 Area (one per issue or PR):
 `area:web`, `area:mobile`, `area:desktop`, `area:api`, `area:worker`, `area:integrations`, `area:ai`, `area:sdk`, `area:ui`, `area:website`, `area:docs`, `area:infra`

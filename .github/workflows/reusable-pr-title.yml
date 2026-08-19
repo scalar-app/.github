@@ -1,0 +1,53 @@
+name: Reusable PR title check
+
+# Enforces the Conventional Commits format that CONTRIBUTING.md requires, since
+# maintainers squash on merge and the PR title becomes the commit message.
+# Called from other scalar-app repos:
+#
+#   name: PR title
+#   on:
+#     pull_request_target:
+#       types: [opened, edited, reopened, synchronize]
+#   jobs:
+#     title:
+#       uses: scalar-app/.github/.github/workflows/reusable-pr-title.yml@main
+
+on:
+  workflow_call:
+    inputs:
+      scopes:
+        description: Newline separated list of allowed scopes. Empty allows any scope.
+        type: string
+        default: ''
+
+permissions:
+  pull-requests: read
+
+jobs:
+  title:
+    name: conventional commit title
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check title
+        uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          types: |
+            feat
+            fix
+            refactor
+            perf
+            docs
+            test
+            build
+            ci
+            chore
+            revert
+          scopes: ${{ inputs.scopes }}
+          requireScope: false
+          subjectPattern: '^(?![A-Z])(?!.*\.$).+$'
+          subjectPatternError: |
+            The subject "{subject}" in "{title}" must start with a lowercase
+            letter and must not end with a period.

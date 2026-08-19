@@ -1,0 +1,14 @@
+# Default owners for everything in this repository.
+# Organization-wide policy, templates and shared workflows change rarely and
+# affect every repo, so all changes here need maintainer review.
+
+*                               @scalar-app/maintainers
+
+# Shared CI is called by every other repo. A broken change here breaks all of
+# them at once.
+/.github/workflows/             @scalar-app/maintainers
+
+# Policy documents.
+/SECURITY.md                    @scalar-app/maintainers
+/CODE_OF_CONDUCT.md             @scalar-app/maintainers
+/LICENSE                        @scalar-app/maintainers

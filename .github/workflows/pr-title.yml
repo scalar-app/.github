@@ -1,0 +1,15 @@
+name: PR title
+
+# This repo uses its own shared workflow. Other scalar-app repos add the same
+# file, see README.md.
+
+on:
+  pull_request_target:
+    types: [opened, edited, reopened, synchronize]
+
+permissions:
+  pull-requests: read
+
+jobs:
+  title:
+    uses: ./.github/workflows/reusable-pr-title.yml

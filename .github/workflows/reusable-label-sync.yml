@@ -1,0 +1,44 @@
+name: Reusable label sync
+
+# Keeps a repository's labels identical to .github/labels.yml in this repo.
+# Called from other scalar-app repos:
+#
+#   name: Labels
+#   on:
+#     schedule:
+#       - cron: '0 6 * * 1'
+#     workflow_dispatch:
+#   jobs:
+#     sync:
+#       uses: scalar-app/.github/.github/workflows/reusable-label-sync.yml@main
+#
+# Run it once manually after adding it, then leave it on the schedule.
+
+on:
+  workflow_call:
+    inputs:
+      delete-other-labels:
+        description: Remove labels that are not defined in the shared label set
+        type: boolean
+        default: false
+      dry-run:
+        description: Report what would change without applying it
+        type: boolean
+        default: false
+
+permissions:
+  issues: write
+
+jobs:
+  sync:
+    name: sync labels from scalar-app/.github
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Sync
+        uses: EndBug/label-sync@v2
+        with:
+          config-file: https://raw.githubusercontent.com/scalar-app/.github/main/.github/labels.yml
+          delete-other-labels: ${{ inputs.delete-other-labels }}
+          dry-run: ${{ inputs.dry-run }}
+          token: ${{ github.token }}

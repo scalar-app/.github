@@ -1,0 +1,71 @@
+name: Documentation problem
+description: Something in the docs, a README or a code comment is wrong, missing or misleading.
+title: "docs: "
+labels: ["type:docs"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for documentation only. If the code behaves incorrectly, file a bug report instead.
+  - type: dropdown
+    id: repository
+    attributes:
+      label: Repository
+      description: Where the documentation lives. Pick `docs` if it is on the documentation site.
+      options:
+        - docs
+        - website
+        - web
+        - mobile
+        - desktop
+        - api
+        - worker
+        - integrations
+        - ai
+        - sdk
+        - ui
+        - infra
+        - .github
+        - not sure
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Page or file
+      description: URL of the page, or the path to the file and heading.
+      placeholder: "https://... or api/README.md, section 'Local setup'"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is wrong
+      options:
+        - Instructions do not work
+        - Content is out of date
+        - Content is missing entirely
+        - Content is confusing or ambiguous
+        - Broken link or example
+        - Typo or formatting
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What the documentation says now, what you expected, and what you had to do instead.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested wording
+      description: Optional. A draft replacement is the fastest way to get this fixed.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked that this is not already fixed on the main branch.
+          required: true

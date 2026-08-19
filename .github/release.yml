@@ -1,0 +1,32 @@
+# Categories used when GitHub generates release notes. Entries are matched
+# against pull request labels, in order, and each PR lands in the first
+# category it matches.
+changelog:
+  exclude:
+    labels:
+      - type:chore
+      - skip-changelog
+    authors:
+      - dependabot
+  categories:
+    - title: Breaking changes
+      labels:
+        - breaking
+    - title: Security
+      labels:
+        - type:security
+    - title: Features
+      labels:
+        - type:feature
+    - title: Fixes
+      labels:
+        - type:bug
+    - title: Performance and refactoring
+      labels:
+        - type:refactor
+    - title: Documentation
+      labels:
+        - type:docs
+    - title: Other changes
+      labels:
+        - "*"

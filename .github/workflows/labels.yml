@@ -1,0 +1,26 @@
+name: Labels
+
+# Applies .github/labels.yml to this repository. Other scalar-app repos call
+# the same workflow through scalar-app/.github, see README.md.
+#
+# delete-other-labels stays false until a dry run has been reviewed: turning it
+# on removes every label not in the shared set, including GitHub's defaults.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: Report what would change without applying it
+        type: boolean
+        default: false
+
+permissions:
+  issues: write
+
+jobs:
+  sync:
+    uses: ./.github/workflows/reusable-label-sync.yml
+    with:
+      dry-run: ${{ inputs.dry-run || false }}
